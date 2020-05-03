@@ -1,0 +1,24 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon",
+        "start": "node index.js"
+    },
+    "keywords": [
+        "server",
+        "express"
+    ],
+    "author": "Sergio Pichardo",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "2.8.4",
+        "express": "4.16.3",
+        "nodemon": "1.18.3",
+        "pg": "7.4.3",
+        "redis": "2.8.0"
+    }
+}
