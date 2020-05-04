@@ -14,8 +14,13 @@ services:
       dockerfile: Dockerfile.dev
       context: ./server
     volumes: 
+      # we want to use node_modules stored in docker containers b/c 
+      # that's where we're running the application. 
+      # This volume tells docker to not override the node_modules inside the container and use it for the app
       - /app/node_modules
+      # create volume b/w server and app directories to see changes in real time inside container
       - ./server:/app 
+    # pass environment variables server needs to connect to redis and postgres databases
     environment: 
       - REDIS_HOST=redis # name of image pulled from dockerhub
       - REDIS_PORT=6379 # default redis port
@@ -24,3 +29,19 @@ services:
       - PG_DATABASE=postgres
       - PG_PASSWORD=postgres_password # default postgres password
       - PG_PORT=5432
+  client:
+    # need to stay connected to STDIN channel due to react bug
+    stdin_open: true  
+    build: 
+      dockerfile: Dockerfile.dev
+      context: ./client
+    volumes: 
+      - /app/node_modules
+      - ./client:/app/
+  worker: 
+    build: 
+      dockerfile: Dockerfile.dev 
+      context: ./worker 
+    volumes: 
+      - /app/node_modules
+      - ./worker:/app
