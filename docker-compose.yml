@@ -1,4 +1,26 @@
 version: "3"
 services: 
   postgres: 
-    image: "postgres:latest"
+    image: postgres:latest 
+    restart: always
+    environment: 
+      # A better approach would be to store the pass the password 
+      # to postgres from a docker secret, but docker swarm must be enabled
+      - POSTGRES_PASSWORD=postgres_password
+  redis: 
+    image: redis:latest
+  server: 
+    build: 
+      dockerfile: Dockerfile.dev
+      context: ./server
+    volumes: 
+      - /app/node_modules
+      - ./server:/app 
+    environment: 
+      - REDIS_HOST=redis # name of image pulled from dockerhub
+      - REDIS_PORT=6379 # default redis port
+      - PG_USER=postgres
+      - PG_HOST=posgres 
+      - PG_DATABASE=postgres
+      - PG_PASSWORD=postgres_password # default postgres password
+      - PG_PORT=5432
