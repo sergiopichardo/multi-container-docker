@@ -1,4 +1,4 @@
 # Complex 
-React, Express, Postgress, Redis and Node.js application (for learning purposes)
+Containerizing multiple React and Node application with Docker, and Docker-compose (for learning purposes)
 
 
