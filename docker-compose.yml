@@ -36,11 +36,11 @@ services:
     environment: 
       - REDIS_HOST=redis # name of image pulled from dockerhub
       - REDIS_PORT=6379 # default redis port
-      - PG_USER=postgres
-      - PG_HOST=posgres 
-      - PG_DATABASE=postgres
-      - PG_PASSWORD=postgres_password # default postgres password
-      - PG_PORT=5432
+      - PGUSER=postgres
+      - PGHOST=postgres 
+      - PGDATABASE=postgres
+      - PGPASSWORD=postgres_password # default postgres password
+      - PGPORT=5432
   client:
     # need to stay connected to STDIN channel due to react bug
     stdin_open: true  
