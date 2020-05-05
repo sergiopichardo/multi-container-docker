@@ -19,5 +19,5 @@ $ docker-compose up
 
 
 ## NOTE
-The React app does will update when indices are submitted, 
-to achieve this, I'll try to use websockets in future updates of the project to setup polling between react and express server. 
+The React app does not reload when indices are submitted. You must reload page manually. 
+In future updates of the project I'll try to use websockets to setup polling between react and express server.  
