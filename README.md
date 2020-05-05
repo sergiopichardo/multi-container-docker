@@ -1,7 +1,8 @@
 # Multi Container Docker 
 Containerizing multiple React and Node application with Docker, and Docker-compose (for learning purposes)
 
-![alt Project Architecture](https://github.com/sergiopichardo/multi-containter-docker/blob/master/diagrams/app-architecture.png)
+![alt Project Architecture](https://github.com/sergiopichardo/multi-container-docker/blob/master/diagrams/app-architecture.png)
+
 
 
 ## How to start up the application 
