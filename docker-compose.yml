@@ -31,7 +31,7 @@ services:
       # This volume tells docker to not override the node_modules inside the container and use it for the app
       - /app/node_modules
       # create volume b/w server and app directories to see changes in real time inside container
-      - ./server:/app 
+      - .:/app 
     # pass environment variables server needs to connect to redis and postgres databases
     environment: 
       - REDIS_HOST=redis # name of image pulled from dockerhub
@@ -49,7 +49,7 @@ services:
       context: ./client
     volumes: 
       - /app/node_modules
-      - ./client:/app
+      - .:/app
   worker: 
     build: 
       dockerfile: Dockerfile.dev 
