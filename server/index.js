@@ -39,6 +39,7 @@ app.get('/', (req, res) => {
     res.send('Hi');
 });
 
+// gets all the indices
 app.get('/values/all', async (req, res) => {
     const values = await pgClient.query('SELECT * from values');
 
@@ -46,12 +47,15 @@ app.get('/values/all', async (req, res) => {
     // res.send([1, 2, 3]);
 });
 
+// Gets all the current values 
 app.get('/values/current', async (req, res) => {
     redisClient.hgetall('values', (err, values) => {
         res.send(values);
     });
 });
 
+// The values are stored in redis when 
+// the form is submitted
 app.post('/values', async (req, res) => {
     const index = req.body.index;
 
