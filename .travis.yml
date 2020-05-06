@@ -15,7 +15,7 @@ after_success:
   - docker build -t sergiopichardo/multi-server ./server 
   - docker build -t sergiopichardo/multi-worker ./worker 
   # Login to docker cli 
-  - echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # push images to dockerhub 
   - docker push sergiopichardo/multi-client
   - docker push sergiopichardo/multi-nginx
