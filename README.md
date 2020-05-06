@@ -24,7 +24,24 @@ ECS (Elastic Container Service). You'll need to create a **container definition*
 [alt Container Definitions Documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html)
 
 
+### Example
+```json
+{
+    "AWSEBDockerrunVersion" : 2, 
+    "containerDefinitions" : [
+        {
+            "name": "client", 
+            "image": "sergiopichardo/multi-client",
+            "hostName": "client",
+            "essential": false
+        }
+    ]  
+}
+```
 
 ## NOTE
 The React app does not reload when indices are submitted. You must reload page manually. 
 In future updates of the project I'll try to use websockets to setup polling between react and express server.  
+
+
+
