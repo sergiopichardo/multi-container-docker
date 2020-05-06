@@ -73,13 +73,21 @@ aws iam create-instance-profile --instance-profile-name <YOUR_INSTANCE_PROFILE_N
 aws iam add-role-to-instance-profile --role-name <YOUR_ROLE_NAME> --instance-profile-name <YOUR_INSTANCE_PROFILE_NAME>
 ```
 
-### Check if your role was create by listing the profile
+### Attach policy to role 
 ```sh
-aws iam list-instance-profiles
+aws iam attach-role-policy --role-name <YOUR_ROLE_NAME> --policy-arn <POLICY_ARN>
+```
+
+This is the ARN of the `AWSElasticBeanstalkMulticontainerDocker` policy you'd need to attach to your Role 
+```sh
+arn:aws:iam::aws:policy/AWSElasticBeanstalkMulticontainerDocker
 ```
 
 
-
+### Check if your role was create by listing the profile
+```sh
+aws iam list-instance-profiles 
+```
 
 
 
