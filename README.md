@@ -60,7 +60,8 @@ another managed policy that let's your EC2 instances assume the role through STS
 
 ### Create a new role with the assume role policy
 ```sh
-aws iam create-role --role-name <YOUR_ROLE_NAME> --assume-role-policy-document file://Role-Trust-policy.json
+aws iam create-role --role-name <YOUR_ROLE_NAME> \
+                    --assume-role-policy-document file://Role-Trust-policy.json
 ```
 
 ### Create an instance profile
@@ -70,12 +71,14 @@ aws iam create-instance-profile --instance-profile-name <YOUR_INSTANCE_PROFILE_N
 
 ### Attach the role to the instance profile
 ```sh
-aws iam add-role-to-instance-profile --role-name <YOUR_ROLE_NAME> --instance-profile-name <YOUR_INSTANCE_PROFILE_NAME>
+aws iam add-role-to-instance-profile --role-name <YOUR_ROLE_NAME> \
+                                     --instance-profile-name <YOUR_INSTANCE_PROFILE_NAME>
 ```
 
 ### Attach policy to role 
 ```sh
-aws iam attach-role-policy --role-name <YOUR_ROLE_NAME> --policy-arn <POLICY_ARN>
+aws iam attach-role-policy --role-name <YOUR_ROLE_NAME> \
+                           --policy-arn <POLICY_ARN>
 ```
 
 This is the ARN of the `AWSElasticBeanstalkMulticontainerDocker` policy you'd need to attach to your Role 
