@@ -39,6 +39,30 @@ ECS (Elastic Container Service). You'll need to create a **container definition*
 }
 ```
 
+## Lint your `Dockerrun.aws.json` file 
+Install JSON Lint
+```sh
+$ npm install -g jsonlint-mod 
+```
+
+Run JSON Lint
+```sh
+$ jsonlint Dockerrun.aws.json
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## NOTE
 The React app does not reload when indices are submitted. You must reload page manually. 
 In future updates of the project I'll try to use websockets to setup polling between react and express server.  
