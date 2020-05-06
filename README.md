@@ -17,11 +17,11 @@ Consequent start up
 $ docker-compose up
 ```
 
-## `Dockerrun.aws.json`
+## Dockerrun.aws.json
 This file is used by Elastic Beanstalk to delegate the setup of Docker containers to 
 ECS (Elastic Container Service). You'll need to create a **container definition**. 
 
-[alt Container Definitions Documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html)
+[Container Definitions Documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html)
 
 
 ### Example
@@ -39,7 +39,7 @@ ECS (Elastic Container Service). You'll need to create a **container definition*
 }
 ```
 
-## Lint your `Dockerrun.aws.json` file 
+## Lint your Dockerrun.aws.json file 
 Install JSON Lint
 ```sh
 $ npm install -g jsonlint-mod 
