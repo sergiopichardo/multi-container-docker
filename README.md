@@ -17,6 +17,13 @@ Consequent start up
 $ docker-compose up
 ```
 
+## `Dockerrun.aws.json`
+This file is used by Elastic Beanstalk to delegate the setup of Docker containers to 
+ECS (Elastic Container Service). You'll need to create a **container definition**. 
+
+[alt Container Definitions Documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html)
+
+
 
 ## NOTE
 The React app does not reload when indices are submitted. You must reload page manually. 
