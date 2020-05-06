@@ -51,6 +51,35 @@ $ jsonlint Dockerrun.aws.json
 ```
 
 
+## Setting up an instance profile 
+Setting up an instance profile to allow your EC2 instances to communicate 
+with ECS (Elastic Container Server) which is the service that manages Docker containers.
+This happens through the ECS Agent running inside your containers, but for this to 
+happen you need to attach a role to your EC2 instances. But before that you need to attach
+another managed policy that let's your EC2 instances assume the role through STS (Securty Token Service). 
+
+### Create a new role with the assume role policy
+```sh
+aws iam create-role --role-name <YOUR_ROLE_NAME> --assume-role-policy-document file://Role-Trust-policy.json
+```
+
+### Create an instance profile
+```sh
+aws iam create-instance-profile --instance-profile-name <YOUR_INSTANCE_PROFILE_NAME>
+```
+
+### Attach the role to the instance profile
+```sh
+aws iam add-role-to-instance-profile --role-name <YOUR_ROLE_NAME> --instance-profile-name <YOUR_INSTANCE_PROFILE_NAME>
+```
+
+### Check if your role was create by listing the profile
+```sh
+aws iam list-instance-profiles
+```
+
+
+
 
 
 
