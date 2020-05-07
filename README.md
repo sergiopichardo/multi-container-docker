@@ -139,6 +139,15 @@ eb open
 eb terminate <YOUR_EB_ENVIRONMENT_NAME>
 ```
 
+## Cloud Resources 
+To get the application to work in production you'll need to create 
+a new AWS RDS Instance (Postgres) and an AWS ElastiCache (Redis) instance.
+
+
+## Security Groups 
+Create a security group with the following rules and attach it to the RDS, Redis, and Elastic Beanstalk EC2 instances. Also, you'll need to add the environment variables referencing the new hostnames. You'll add this variables under the Elastic Beanstalk configuration environment > configuration > Software.
+
+![alt Project Architecture](https://github.com/sergiopichardo/multi-container-docker/blob/master/diagrams/security-groups.png)
 
 
 #### TODOS (for myself)
