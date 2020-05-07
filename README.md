@@ -150,7 +150,7 @@ Create a security group with the following rules and attach it to the RDS, Redis
 ![alt Project Architecture](https://github.com/sergiopichardo/multi-container-docker/blob/master/diagrams/security-groups.png)
 
 
-#### TODOS (for myself)
+#### TODOS 
 - [ ] Autome instance profile configuration using ansible
 - [ ] Automate entire application architecture using cloudformation
 - [ ] Create Jenkins CI/CD Pipeline using Jenkins in Docker 
