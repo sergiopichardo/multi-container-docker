@@ -124,6 +124,11 @@ eb list
 eb logs
 ```
 
+### View Elastic Beanstalk creation events
+```sh 
+eb events -f 
+```
+
 ### Open Application URL in browser
 ```sh 
 eb open
