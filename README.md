@@ -114,6 +114,11 @@ eb create <YOUR_EB_ENVIRONMENT_NAME>
 eb status
 ```
 
+### List your running environments
+```sh 
+eb list
+```
+
 ### Check your environment logs
 ```sh 
 eb logs
