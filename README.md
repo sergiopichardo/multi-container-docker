@@ -5,16 +5,16 @@ Containerizing multiple React and Node application with Docker, and Docker-compo
 
 
 
-## How to start up the application 
+## How to start up the application development using docker-compose
 
 Build for the first time
 ```sh
-$ docker-compose up --build
+docker-compose up --build
 ```
 
 Consequent start up
 ```sh
-$ docker-compose up
+docker-compose up
 ```
 
 ## Dockerrun.aws.json
@@ -42,21 +42,25 @@ ECS (Elastic Container Service). You'll need to create a **container definition*
 ## Lint your Dockerrun.aws.json file 
 Install JSON Lint
 ```sh
-$ npm install -g jsonlint-mod 
+npm install -g jsonlint-mod 
 ```
 
 Run JSON Lint
 ```sh
-$ jsonlint Dockerrun.aws.json
+jsonlint Dockerrun.aws.json
 ```
 
+## Instance Profile
 
-## Setting up an instance profile 
+### What is an instance profile? 
+An instance profile is a container for an *IAM role* that you can use to *pass role information to an EC2 instance* when the instance starts.
+
+### Setting up an instance profile 
 Setting up an instance profile to allow your EC2 instances to communicate 
 with ECS (Elastic Container Server) which is the service that manages Docker containers.
-This happens through the ECS Agent running inside your containers, but for this to 
-happen you need to attach a role to your EC2 instances. But before that you need to attach
-another managed policy that let's your EC2 instances assume the role through STS (Securty Token Service). 
+This happens through the ECS Agent running inside your EC2 instance, but for this to 
+happen you need to attach a role to your instances. But before that, you need to attach
+another managed policy that let's your instances assume the role through STS (Securty Token Service). 
 
 ### Create a new role with the assume role policy
 ```sh
@@ -92,12 +96,45 @@ arn:aws:iam::aws:policy/AWSElasticBeanstalkMulticontainerDocker
 aws iam list-instance-profiles 
 ```
 
+## Setup Elastic Beanstalk 
+NOTE: I'm assuming you already installed elastic beanstalk CLI. 
+
+### Create a new Elastic Beanstalk Application 
+```sh 
+eb init <YOUR_EB_APPLICATION_NAME>
+```
+
+### Create a new Elastic Beanstalk Environment 
+```sh 
+eb create <YOUR_EB_ENVIRONMENT_NAME>
+```
+
+### Check your environment status
+```sh 
+eb status
+```
+
+### Check your environment logs
+```sh 
+eb logs
+```
+
+### Open Application URL in browser
+```sh 
+eb open
+```
+
+### Terminate your environment (along with application)
+```sh 
+eb terminate <YOUR_EB_ENVIRONMENT_NAME>
+```
+
+
+
 #### TODOS (for myself)
 - [ ] Autome instance profile configuration using ansible
 - [ ] Automate entire application architecture using cloudformation
 - [ ] Create Jenkins CI/CD Pipeline using Jenkins in Docker 
-
-
 
 
 
