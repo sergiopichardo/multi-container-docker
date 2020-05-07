@@ -92,12 +92,10 @@ arn:aws:iam::aws:policy/AWSElasticBeanstalkMulticontainerDocker
 aws iam list-instance-profiles 
 ```
 
-
-
-
-
-
-
+#### TODOS (for myself)
+- [ ] Autome instance profile configuration using ansible
+- [ ] Automate entire application architecture using cloudformation
+- [ ] Create Jenkins CI/CD Pipeline using Jenkins in Docker 
 
 
 
