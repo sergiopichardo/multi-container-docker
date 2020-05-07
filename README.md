@@ -106,7 +106,7 @@ eb init <YOUR_EB_APPLICATION_NAME>
 
 ### Create a new Elastic Beanstalk Environment 
 ```sh 
-eb create <YOUR_EB_ENVIRONMENT_NAME>
+eb create <YOUR_EB_ENVIRONMENT_NAME> -ip <YOUR_INSTANCE_PROFILE_NAME> 
 ```
 
 ### Check your environment status
