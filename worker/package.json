@@ -11,7 +11,7 @@
     "author": "Sergio Pichardo",
     "license": "ISC",
     "dependencies": {
-        "nodemon": "1.18.3",
+        "nodemon": "3.1.7",
         "redis": "2.8.0"
     }
 }
